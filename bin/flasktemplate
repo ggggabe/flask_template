@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+if [ -d "./.git" ]; then
+   echo ".git repository exists, don't want to fuck with that"
+   exit 1
+fi
+
+if [ "$#" -eq 1 ]; then
+    echo "creating flask project in directory $1"
+    mkdir $1
+    cd $1
+fi
+
+cp $DIR/makefile .
+make flask || (echo "make flask failed"; make clean; exit 1;)
+git init || (echo "git init failed"; make clean; exit 1;)
+virtualenv venv || (echo "venv failed"; make clean; exit 1;)
+pip install flask || (echo "flask install failed"; make clean; exit 1)
+rm makefile
+echo "flask project created"
