@@ -13,9 +13,23 @@ if [ "$#" -eq 1 ]; then
 fi
 
 cp $DIR/makefile .
+
+#Setup the file structure
 make flask || (echo "make flask failed"; make clean; exit 1;)
+#Initialize git repo
 git init || (echo "git init failed"; make clean; exit 1;)
+
+#Create venv
 virtualenv venv || (echo "venv failed"; make clean; exit 1;)
+
+#install flask
 pip install flask || (echo "flask install failed"; make clean; exit 1)
+
+#copy over template files and router.py
+cp $DIR/../html/* app/templates || (echo "cp failed"; make clean; exit 1;)
+cp $DIR/../py/* app/ || (echo "cp failed"; make clean; exit 1;)
+
+#clean up some shit
 rm makefile
+
 echo "flask project created"
