@@ -5,9 +5,9 @@ This little guy is just to facilitate quick creation of flask projects:
 
 ##Usage:
 
->`make install` 
-
->`flasktemplate myproject`
+*`git clone https://github.com/gmarquez727/flask_template.git1`
+*`make install` 
+*`flasktemplate myproject`
 
 
 Dependencies:
