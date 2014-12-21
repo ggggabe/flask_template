@@ -22,4 +22,4 @@ Dependencies:
 
 4.Install flask
 
-5.Create router.py
+5.Create some standard files: router.py, home.html, layout.html.
