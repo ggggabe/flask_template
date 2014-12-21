@@ -6,7 +6,10 @@ This little guy is just to facilitate quick creation of flask projects:
 ##Usage:
 
 >`make install` 
+
 >`flasktemplate myproject`
+
+
 Dependencies:
     virtualenv
     python 2.7+
