@@ -15,7 +15,11 @@ Dependencies:
     python 2.7+
 
 -Create a project file structure
+
 -Create a git repository
+
 -Create a virtual environment
+
 -Install flask
+
 -Create some standard files: router.py, home.html, layout.html.
